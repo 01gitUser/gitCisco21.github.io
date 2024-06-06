@@ -1,36 +1,49 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <script src="aframe-1.5.0.js"></script>
+
   </head>
-  <style>
-    body {
-      background-color: #6895e9;
-    }
-  </style>
   <body>
-    <a-scene>
-      <!-- left tower -->
-      <a-box position="-2.642 0.5 -4.393" rotation="0 12 0" color="#4CC3D9"></a-box>
-      <a-box position="-2.642 1.5 -4.393" rotation="0 -8 0" color="#2CA3D9"></a-box>
-      <a-box position="-2.742 2.5 -4.393" rotation="0 3 0" color="#3e5786"></a-box>
-      <!-- portal -->
-      <a-box position="-1 1.5 -4" rotation="0 3 0" height="3" width="0.333" color="#3e5786"></a-box>
-      <a-box position="1 1.5 -4" rotation="0 14 0" height="3" width="0.333" color="#3a5d9f"></a-box>
-      <a-box position="0 3.16 -4" rotation="0 -3 0" height="0.33" width="2.25" color="#6895e9"></a-box>
-      <!-- right tower -->
-      <a-cylinder position="2.699 0.75 -5.057" rotation="0 0 0" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-cylinder position="2.799 2.25 -4.87" rotation="0 0 0" radius="0.5" height="1.5" color="#5b682a"></a-cylinder>
-      <!-- rooftops -->
-      <a-tetrahedron position="-1.900 3.149 -4.319" rotation="-36.997 -34.514 44.270" width="0.333" color="#7d06ac"></a-tetrahedron>
-      <a-tetrahedron position="1.566 3.310 -4.616" rotation="-36.997 -34.514 44.270" width="0.333" color="#590b2a"></a-tetrahedron>
-      <!-- scene setting -->
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="7" height="4" color="#7BC8A4"></a-plane>
-      <a-light position="1.8 1.8 -2.2" color="#ffeee0" type="spot" penumbra="0.2"></a-light>
-      <a-light type="ambient" color="#04225D"></a-light>
-      <a-sky color="#021126"></a-sky>
-    </a-scene>
+    <a-scene inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+        <!-- Assets -->
+        <a-assests>
+            <video id="Waterfall" autoplay loop="true" muted="true" src="fabianWaves.mp4"></video>
+            <img id="parquet" src="parquet.png">
+            <img id="wall" src="greenFabric.png">
+            <a-asset-item id="Couch" src="ClubCouch.glb"></a-asset-item>
+        </a-assests>
+           
+
+        <!-- That s the TV -->
+        <a-box position="-1.44155 3.3 -8.04449" rotation="0 90 0" color="#4CC3D9" material="color: #000000" geometry="" scale="0.80189 5 8.96795"></a-box>
+        <a-video src="#Waterfall" width="16" height="9" position="-1.44155 3.1 -7" scale="0.45 0.45 0.45" play-on-click></a-video>
+        <a-video src="#Waterfall" width="16" height="9" position="1.6501 3.1 -2.18634" scale="0.45 0.45 0.45" play-on-click="" material="" geometry="" rotation="0 89.6988346589109 0"></a-video>
+        <a-video src="#Waterfall" width="16" height="9" position="-5.35873 3.1 -2.18634" scale="0.45 0.45 0.45" play-on-click="" material="" geometry="" rotation="0 89.6988346589109 0"></a-video>
+        <!-- Couch -->
+        <a-entity gltf-model="#Couch" position="-1.44155 0 0" rotation="0 180 0"></a-gltf-model></a-entity>
+
+        <!-- Walls-->
+        <a-box position="-7.51027 2.89623 -3" rotation=""  material="src: #wall" geometry="" scale="1 10 11.18351"></a-box>
+        <a-box position="4.5606 2.89623 -3" rotation=""  material="src: #wall" geometry="" scale="1 10 11.18351"></a-box>
+        <a-box position="-1.44155 2.89623 -9.04905" rotation="0 90 0"  material="src: #wall" geometry="" scale="1 10 11.18351"></a-box>
+        <a-box position="-1.44155 2.89623 3.05987" rotation="0 90 0"  material="src: #wall" geometry="" scale="1 10 11.18351"></a-box>
+
+        <!-- Floor -->
+        <a-plane position="-1.57566 0 -3.38842" rotation="-90 0 0" width="4" height="4" material="src: #parquet" geometry="" scale="3.00215 3.00215 3.00215"></a-plane>
+        <a-sky color="#ECECEC" material="" geometry=""></a-sky>
+      <div class="a-loader-title" style="display: none;"></div><div class="a-loader-title" style="display: none;"></div></a-scene>
   </body>
 </html>
+
+<!-- <a-scene>
+    <a-assets>
+      <video id="penguin-sledding" autoplay loop="true" src="penguin-sledding.mp4"></video>
+    </a-assets>
+  
+   
+    <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video>
+  
+   
+    <a-video src="airbending.mp4"></a-video>
+  </a-scene> -->
